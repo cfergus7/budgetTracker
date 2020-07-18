@@ -4,7 +4,6 @@ const request = indexedDB.open('budget',1);
 request.onupgradeneeded = function (event) {
     db = event.target.result;
     db.createObjectStore('pending', { autoIncrement: true });
-
 };
 
 request.onsuccess = function (event) {
@@ -17,7 +16,7 @@ request.onsuccess = function (event) {
 };
 
 request.onerror = function (event) {
-    if (err) throw err;
+    console.log("You have issues");
 };
 
 function saveRecord(record) {
